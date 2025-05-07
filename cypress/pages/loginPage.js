@@ -4,11 +4,21 @@ export class LoginPage {
     }
 
     fillUsername(username){
-        cy.get('input[name="username"]').clear().type(username)
+        const usernameField = cy.get('input[name="username"]')
+        if (username) {
+            usernameField.clear().type(username)
+        } else {
+            usernameField.clear()
+        }
     }
 
     fillPassword(password){
-        cy.get('input[name="password"]').clear().type(password)
+        const passwordField = cy.get('input[name="password"]')
+        if (password) {
+            passwordField.clear().type(password)
+        } else {
+            passwordField.clear()
+        }
     }
 
     clickLogin(){
